@@ -120,5 +120,5 @@ Some examples of using tags:
 
 ```
     # Audit and patch the site
-    ansible-playbook site.yml --tags="patch"
+    ansible-playbook site.yml --tags="ssh"
 ```
