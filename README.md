@@ -100,16 +100,6 @@ This sample playbook should be run in a folder that is above the main UBUNTU-18-
   roles:
 
       - role: "{{ playbook_dir }}"
-
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
 ```
 
 Tags
