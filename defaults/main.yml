@@ -32,8 +32,6 @@ ubtu20cis_disruption_high: true
 # setting to make them stand out.
 ubtu20cis_audit_disruptive: yes
 
-ubtu20cis_skip_for_travis: false
-
 ubtu20cis_workaround_for_disa_benchmark: true
 ubtu20cis_workaround_for_ssg_benchmark: true
 

@@ -13,7 +13,7 @@ Requirements
 ------------
 
 You should carefully read through the tasks to make sure these changes will not break your systems before running this playbook.
-If you want to do a dry run without changing anything, set the below sections (rhel8cis_section1-6) to false. 
+If you want to do a dry run without changing anything, set the below sections (ubtu20cis_section1-6_patch) to false. 
 
 Role Variables
 --------------
@@ -100,8 +100,6 @@ This sample playbook should be run in a folder that is above the main UBUNTU-18-
   roles:
 
       - role: "{{ playbook_dir }}"
-        ubtu20cis_skip_for_travis: false
-        ubtu20cis_oscap_scan: yes
 
 License
 -------
