@@ -962,9 +962,11 @@
       marker: "# {mark} ANSIBLE MANAGED"
       block: |
         # Set session timeout - CIS ID 5.4.5
-        TMOUT={{ ubtu20cis_shell_session_timeout.timeout }}
-        readonly TMOUT
-        export TMOUT
+        if [ "$TMOUT" == "" ]; then
+          TMOUT={{ ubtu20cis_shell_session_timeout.timeout }}
+          readonly TMOUT
+          export TMOUT
+        fi
   with_items:
       - { dest: "{{ ubtu20cis_shell_session_timeout.file }}", state: present }
       - { dest: /etc/profile, state: "{{ (ubtu20cis_shell_session_timeout.file == '/etc/profile') | ternary('present', 'absent') }}" }
