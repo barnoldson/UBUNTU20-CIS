@@ -403,8 +403,7 @@ ubtu20cis_root_pw: "Password1"
 # Control 1.8.1.1
 # This will be the motd banner must not contain the below items in order to be compliant with Ubuntu 20 CIS
 # \m, \r, \s, \v or references to the OS platform
-ubtu20cis_warning_banner: |
-        Authorized uses only. All activity may be monitored and reported.
+ubtu20cis_warning_banner: 'Authorized uses only. All activity may be monitored and reported.''
 
 # Section 2 Control Variables
 # Control 2.2.1.1
