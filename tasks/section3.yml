@@ -442,6 +442,7 @@
       rule: allow
       name: OpenSSH
       state: enabled
+      comment: "UBUNTU20-CIS"
   when:
       - ubtu20cis_rule_3_5_2_1
       - ubtu20cis_firewall_package == "ufw"
@@ -459,6 +460,7 @@
             rule: allow
             direction: in
             interface: lo
+            comment: "UBUNTU20-CIS"
         notify: reload ufw
 
       - name: "3.5.1.4 | PATCH | Ensure loopback traffic is configured | Set allow out ufw rules"
@@ -466,6 +468,7 @@
             rule: allow
             direction: out
             interface: lo
+            comment: "UBUNTU20-CIS"
         notify: reload ufw
 
       - name: "3.5.1.4 | PATCH | Ensure loopback traffic is configured | Set deny ufw rules IPv4"
@@ -473,6 +476,7 @@
             rule: deny
             direction: in
             from_ip: 127.0.0.0/8
+            comment: "UBUNTU20-CIS"
         notify: reload ufw
 
       - name: "3.5.1.4 | PATCH | Ensure loopback traffic is configured | Set deny ufw rules IPv6"
@@ -480,6 +484,7 @@
             rule: deny
             direction: in
             from_ip: "::1"
+            comment: "UBUNTU20-CIS"
         notify: reload ufw
         when: ubtu20cis_ipv6_required
   when:
@@ -499,6 +504,7 @@
             rule: allow
             direction: out
             to_port: '{{ item }}'
+            comment: "UBUNTU20-CIS"
         with_items:
             - "{{ ubtu20cis_ufw_allow_out_ports }}"
         notify: reload ufw
@@ -508,7 +514,8 @@
         ufw:
             rule: allow
             direction: out
-            to_port: all
+            to_port: ""
+            comment: "UBUNTU20-CIS"
         notify: reload ufw
         when: "'all' in ubtu20cis_ufw_allow_out_ports"
   when:
@@ -560,6 +567,7 @@
   ufw:
       default: deny
       direction: "{{ item }}"
+      comment: "UBUNTU20-CIS"
   notify: reload ufw
   with_items:
       - incoming
